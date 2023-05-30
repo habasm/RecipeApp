@@ -43,8 +43,7 @@ class UsersController < ApplicationController
     private
   
     def logout_user
-      sign_out current_user
-      redirect_to new_user_session_path
+     
     end
   
     def set_user
