@@ -112,7 +112,7 @@ To run the project, execute the following command:
 
 👤 **Habtamu Asmelash**
 
-- GitHub: [@kessio](https://github.com/habasm/)
+- GitHub: [@habasm](https://github.com/habasm/)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/)
 
 
