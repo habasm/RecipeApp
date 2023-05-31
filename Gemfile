@@ -1,7 +1,9 @@
-source "https://rubygems.org"
+# frozen_string_literal: true
+
+source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "3.1.3"
+ruby '3.1.3'
 
 gem 'rubocop', '>= 1.0', '< 2.0'
 
@@ -46,7 +48,7 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', require: false
-
+gem "bootstrap", "~> 5.0"
 # Use Sass to process CSS
 # gem "sassc-rails"
 
