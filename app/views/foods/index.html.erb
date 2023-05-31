@@ -1,6 +1,9 @@
 <h1> Food List </h1>
-<%= link_to "Add Food",  class: 'btn btn-warning' %>
-
+<div class="container-fluid d-flex flex-column align-items-center mx-2 px-4">
+<%= link_to "Add Food", new_food_path, class: 'btn btn-warning' %>
+ <% if @foods.empty? %>
+  <h2> No Food item on record </h2>
+  <% else %>
 <table class="text-white" border="1px">
   <thead>
     <tr>
@@ -11,24 +14,21 @@
     </tr>
   </thead>
   <tbody>
-    <% if @foods.empty? %>
-      <tr>
-        <td colspan="4">
-          <p class="padding: 4rem">
-          No foods found
-          </p>
-        </td>
-      </tr>
-    <% else %>
       <% @foods.each do |food| %>
        <tr>
         <td><%= food.Name %></td>
         <td><%= food.Measurement_id %></td>
         <td><%= food.Price %></td>
+        <td>
+        <%= link_to 'Delete food', food, data:  {
+                       turbo_method: :delete, 
+                       turbo_confirm: "Are you sure?"}, 
+                       class: "comment-like btn btn-warning" %>
+        </td>
       </tr>
    <% end %>
- <% end %>
 </tbody>
 </table>
-  
+ <% end %> 
+</div>
 

@@ -1,0 +1,35 @@
+<%= form_with(model: food) do |form| %>
+  <% if food.errors.any? %>
+    <div class="text-white">
+      <ul>
+        <% food.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, class: 'text-white'  %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :measurement_unit, class: 'text-white'  %>
+    <%= form.text_field :measurement_unit %>
+  </div>
+
+  <div>
+    <%= form.label :price, class: 'text-white'  %>
+    <%= form.text_field :price %>
+  </div>
+
+  <div>
+    <%= form.label :quantity, class: 'text-white' %>
+    <%= form.number_field :quantity %>
+  </div>
+
+  <div class="my-3">
+    <%= form.submit %>
+  </div>
+<% end %>
