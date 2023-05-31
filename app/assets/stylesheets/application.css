@@ -24,8 +24,8 @@ body {
 }
 
 input {
-    width: 100%;
-  }
+  width: 100%;
+}
 
 h1,
 h2 {
@@ -45,7 +45,7 @@ h2 {
 }
 
 .text-btn {
-    background: none;
-    color: var(--accent);
-    text-decoration: underline;
-  }
+  background: none;
+  color: var(--accent);
+  text-decoration: underline;
+}
