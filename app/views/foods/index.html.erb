@@ -1,34 +1,35 @@
-<h1> Food List </h1>
-<%= link_to "Add Food",  class: 'btn btn-warning' %>
+<head>
+  <title>Recipe App</title>
+  <%= stylesheet_link_tag 'foods' %>
+</head>
 
-<table class="text-white" border="1px">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Measurement Unit</th>
-      <th>Unit Price</th>
-      <th>Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% if @foods.empty? %>
-      <tr>
-        <td colspan="4">
-          <p class="padding: 4rem">
-          No foods found
-          </p>
-        </td>
-      </tr>
-    <% else %>
-      <% @foods.each do |food| %>
-       <tr>
-        <td><%= food.Name %></td>
-        <td><%= food.Measurement_id %></td>
-        <td><%= food.Price %></td>
-      </tr>
-   <% end %>
- <% end %>
-</tbody>
-</table>
-  
+<section class="section">
+  <button><%= link_to 'Create Food', "foods/new" %></button>
 
+  <%if @foods.empty?%>
+    <p>No Food Added</p>
+  <% else %>
+    <div class="table">
+      <table class="table">
+        <thead>
+          <td> Food</td>
+          <td> Measurement Unit</td>
+          <td> Unit price</td>
+          <td> Action</td>
+        </thead>
+        <% @foods.each do |food| %>
+          <tr>
+            <td> <%= food.name %> </td>
+            <td> <%= food.measurement_unit %> </td>
+            <td> $<%= food.price %></td>
+            <% if current_user.id == food.user_id %>
+              <td> <%= button_to 'Delete', food, method: :delete %> </td>
+            <% else %>
+              <td> No Action </td>
+            <% end %>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  <% end %>
+</section>

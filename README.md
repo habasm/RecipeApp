@@ -1,68 +1,56 @@
 <a name="readme-top"></a>
 
-<div align="center">
-  <h3><b>Recipe App</b></h3>
-</div>
-
-<!-- TABLE OF CONTENTS -->
-
 # 📗 Table of Contents
 
 - [📖 About the Project](#about-project)
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
-- [Diagram](#diagram)   
+    - [Key Features](#key-features)
+  - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
   - [Install](#install)
   - [Usage](#usage)
+  - [Run tests](#run-tests)
+  - [Deployment](#triangular_flag_on_post-deployment)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
-- [❓ FAQ](#faq)
 - [📝 License](#license)
 
-<!-- PROJECT DESCRIPTION -->
+# 📖 Recipe App <a name="about-project"></a>
 
-# Recipe App <a name="about-project"></a>
-
-
-**Recipe App** keeps track of all your recipes and ingredients. It will allow you to save ingredients, keep track of what you have, create recipes, and generate a shopping list based on what you have and what you are missing from a recipe. 
+The Recipe App keeps track of all your recipes, ingredients, and inventory. It allows you to save ingredients, keep track of what you have, create recipes, and generate a shopping list based on what you have and what you are missing from a recipe. Also, since sharing recipes is an important part of cooking, the app allows you to make them public so anyone can access them
 
 ## 🛠 Built With <a name="built-with"></a>
+
+The Recipe App was built with:
+
+    - Ruby On Rails
+    - PostgreSQL
 
 ### Tech Stack <a name="tech-stack"></a>
 
 <details>
-  <summary>Server</summary>
-  <ul>
-    <li><a href="https://www.ruby-lang.org/en/">Ruby</a></li>
-  </ul>
+  <summary>Client</summary>
 </details>
 
-<p align="right"><a href="#readme-top">back to top</a></p>
+<details>
+  <summary>Server</summary>
+</details>
 
-### ERD Diagram <a name="diagram">
-![Preview](./app/assets/images/recipe-app.png)
+<details>
+<summary>Database</summary>
+</details>
 
-<!-- Features -->
+### Key Features <a name="key-features"></a>
 
-### Key Features <a id="key-features"></a>
-
-- **A login page**
-- **A registration page**
-- **A food list**
-- **A recipes list**
-- **A general shopping list view**
-- **A list of public recipes**
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-<!-- GETTING STARTED -->
+- **Add posts**
+- **Add comments**
+- **Display details**
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
@@ -72,97 +60,89 @@ To get a local copy up and running, follow these steps.
 
 In order to run this project you need:
 
-- Ruby
-- Rails
-- Postgresql
+To run this project, you'll need to install:
 
-### Setup
+    - Ruby 2.7.0 or later
+    - Rails 6.0 or later
+    - PostgreSQL
 
-Clone this repository to your desired folder:
-
-```sh
-  cd blog-app
-  git clone https://github.com/habasm/RecipeApp.git
-```
-
-### Install
+### Installation
 
 Install this project with:
 
-- After cloning type 'cd RecipeApp'.
-- Run 'bundle install' to install all the required dependencies.
+```
+    Clone this repository to your desired folder:
+
+`git@github.com:habasm/RecipeApp.git`
+
+cd recipe-app
+
+    Install the required gems:
+
+bundle install
+
+    Set up the database:
+
+rails db:create
+
+rails db:migrate
+```
 
 ### Usage
 
 To run the project, execute the following command:
-- Run 'rails db:create' to create a new database
-- Run 'rails db:migrate' to migrate the db and build the schema
-- Run 'rails s' to start the dev server
 
-<p align="right"><a href="#readme-top">back to top</a></p>
+```sh
+  rails server
+```
 
-<!-- AUTHORS -->
+### Run tests
+
+To run tests, run the following command:
+
+bundle exec rspec
+
+### Deployment
+
+You can deploy this project using:
+
+```sh
+  Not yet deployed
+```
+
+ <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 **Juhar Yimer**
+👤 **HABASM**
 
-- GitHub: [GitHub](https://github.com/juaryimami)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/juhar-yimer/)
-
-👤 **Habtamu Asmelash**
-
-- GitHub: [@habasm](https://github.com/habasm/)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/)
-
-
-<p align="right"><a href="#readme-top">back to top</a></p>
-
-<!-- FUTURE FEATURES -->
+- GitHub: [@habasm](https://github.com/habasm)
+- Twitter: [@habasm](https://twitter.com/habasm)
+- LinkedIn: [habasm](https://www.linkedin.com/in/habasm/)
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-> Features to add to the project.
-- [ ] **Pagination or infinite scrolling for the lists.**
-
-
-<!-- CONTRIBUTING -->
+- Add a meal planner to help users plan their weekly meals.
+- Allow users to add pictures to their recipes.
 
 ## 🤝 Contributing <a name="contributing"></a>
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
-
-<p align="right"><a href="#readme-top">back to top</a></p>
-
-<!-- SUPPORT -->
+Feel free to check the [issues page](https://github.com/habasm/RecipeApp/issues).
 
 ## ⭐️ Show your support <a name="support"></a>
 
-If you like this project...
+If you like this project...give it a ⭐️!
 
-<p align="right"><a href="#readme-top">back to top</a></p>
+## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-<!-- FAQ (optional) -->
-
-## ❓ FAQ <a name="faq"></a>
-
-- **Do I have to have any previous knowledge about ruby to use this project?**
-
-  - No!
-
-- **How to use this project?**
-
-  - check the [Getting Started](#getting-started) section to have a complete guid on how to setup and run teh project.
-
-<p align="right"><a href="#readme-top">back to top</a></p>
-
-<!-- LICENSE -->
+I would like to thank [@microverse](https://www.microverse.org/)
 
 ## 📝 License <a name="license"></a>
 
 This project is [MIT](./LICENSE) licensed.
 
+_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
 
-<p align="right"><a href="#readme-top">back to top</a></p>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
