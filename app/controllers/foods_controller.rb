@@ -2,7 +2,6 @@
 
 class FoodsController < ApplicationController
   before_action :authenticate_user!
-
   def index; end
 
   def show
@@ -15,16 +14,10 @@ class FoodsController < ApplicationController
 
   def new; end
 
-  def edit; end
-
-  def destroy; end
-
   private
 
   def logout_user
     sign_out current_user
     redirect_to new_user_session_path
   end
-
-  def set_user; end
 end
