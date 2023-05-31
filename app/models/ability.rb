@@ -6,9 +6,9 @@ class Ability
     cannot :read, Recipe, public: false
     return unless user.present?
 
-    can(:manage, Recipe, user:)
-    can(:manage, Food, user:)
-    can(:manage, RecipeFood, user:)
+    can(:manage, Recipe, user: user)
+    can(:manage, Food, user: user)
+    can(:manage, RecipeFood, user: user)
     return unless user.role == 'admin'
 
     can :manage, all
