@@ -2,5 +2,38 @@ class FoodsController < ApplicationController
     before_action :authenticate_user!
 
     def index
-    end
+      end
+    
+      def show
+        if params[:id] == 'sign_out'
+            logout_user
+          else
+            set_user
+          end    
+      end
+    
+      def new
+      end
+    
+      def edit
+      end
+    
+     
+    
+      def destroy
+      
+      end
+    
+      private
+    
+      def logout_user
+        sign_out current_user
+        redirect_to new_user_session_path
+      end
+    
+      def set_user
+      end
+    
+    
+    
 end
