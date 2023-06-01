@@ -10,6 +10,7 @@
       <th>Name</th>
       <th>Measurement Unit</th>
       <th>Unit Price</th>
+      <th>Quantity</th>
       <th colspan="3">Actions</th>
     </tr>
   </thead>
@@ -19,6 +20,7 @@
         <td><%= food.Name %></td>
         <td><%= food.Measurement_id %></td>
         <td><%= food.Price %></td>
+        <td><%= food.Quantity %></td>
         <td>
         <%= link_to 'Delete food', food, data:  {
                        turbo_method: :delete, 
