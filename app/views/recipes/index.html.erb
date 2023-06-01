@@ -1,22 +1,12 @@
-<div class="container">
-  <h1 class="titles">Welcome to Our Kitchen! Take a look at our sizzling Recipes</h1>
-  <div class="link-wrapper add-recipe"><%= link_to 'Add new Recipe', new_recipe_path, class: "links" %></div>
-  <div>
-    <% if @recipes.empty? %>
-      <p>No recipe's added yet, click button to add a new recipe</p>
-    <% end %>
-    <% @recipes.each do |recipe| %>
-      <div class="recipes flex">
-        <div>
-          <% if can? :read, recipe %>
-          <h3><%= link_to "#{recipe.name}", recipe_path(recipe.id), class: "links" %></h3>
-          <% if can? :destroy, recipe %>
-          <%= button_to "Delete recipe", recipe_path(recipe.id), class: "delete", method: :delete %>
-          <% end %>
-        </div>
-        <p><%= recipe.description %></p>
-      <% end %>
-      </div>
-    <% end %>
+<section class="recipe-page">
+<button><%= link_to 'Add Recipe', new_recipe_path %></button>
+<% @recipes.each do |r| %>
+  <div class="single-recipe">
+    <h2 class="recipe-name"><%= link_to r.name, recipe_path(r.id) %></h2>
+    <p class="recipe-description"><%= r.description%></p>
+    <% if current_user.id == r.user_id %>
+    <%= button_to 'Remove', recipe_path(r.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
   </div>
-</div>
+<% end %>
+</section>
