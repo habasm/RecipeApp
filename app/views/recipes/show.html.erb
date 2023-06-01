@@ -1,32 +1,67 @@
-<div class="container">
-  <h2 class="recipe"><%= @recipe.name %></h2>
-  <h3 class="recipe-specs">Preparation time: <%= @recipe.preparation_time %> min(s)</h3>
-  <div class="public">
-    <% if @recipe.public %>
-      <p>Public <i class="fa-solid fa-toggle-on"></i></p>
-    <% elsif !@recipe.public %>
-      <p class="public-p">Not public <i class="fa-solid fa-toggle-off"></i></p>
+<head>
+  <title>Recipe App</title>
+  <%= stylesheet_link_tag 'recipes_details' %>
+</head>
+
+<div class="details-page">
+  <h2 class="recipe_detail_name"><%= @recipe.name %></h2>
+  <section class='public_recipe'>
+    <div class='details'>
+      <p>Preparation time: <%= @recipe.preparation_time %> hour</p>
+      <p>Cooking time: <%= @recipe.cooking_time %> hour</p>
+      <p>Description: <%= @recipe.description %></p>
+      <p>ٍSteps go here...</p>
+      
+    </div>
+    <% if current_user.id == @recipe.user_id %>
+    <div class="button_public_class">
+    <p>Make Public</p>
+    <%= button_to recipe_path(@recipe.id), class: 'btn', method: :put do %>
+      <% if @recipe.public %>
+        <i class="fa-solid fa-toggle-on btn-on"></i>
+      <% else %>
+        <i class="fa-solid fa-toggle-off btn-off"></i>
+      <% end %>
     <% end %>
-  </div>
-  <h3 class="recipe-specs">Cooking time: <%= @recipe.cooking_time %> min(s)</h3>
-  <h3 class="recipe-specs">Step by Step Description </h3>
-  <p><%= @recipe.description %></p>
-  <div class="recipe-btns flex">
-  <% if can? :manage, @recipe %>
-    <button class="btn">
-      <%= link_to 'Generate Shopping List', new_recipe_recipe_food_path(@recipe.id), class: "links" %>
-    </button>
-    <button class="btn">
-      <%= link_to 'Add Ingredient', new_recipe_recipe_food_path(@recipe.id), class: "links" %>
-    </button>
+    </div>
+      
     <% end %>
+  </section>
+
+  <% if current_user.id == @recipe.user_id %>
+  <div class="details_buttons">
+    <button>
+      <%= link_to 'Generate Shopping List', shopping_lists_path%>
+    </button>
+    <button>
+      <%= link_to 'Add ingredient', new_recipe_recipe_food_path(@recipe.id)%>
+    </button>
   </div>
-  <%= render partial: 'table', locals: { recipe: @recipe, recipe_foods: @recipe_foods } %>
-</div>
-<div>
-  <% if user_signed_in? %>
-  <%= link_to '<i class="fa-solid fa-arrow-left"></i>'.html_safe, recipes_path, class: "back-arrow links" %>
-  <% else %>
-  <%= link_to '<i class="fa-solid fa-arrow-left"></i>'.html_safe, public_recipes_path, class: "back-arrow links"%>
   <% end %>
+
+
+  <table>
+    <thead>
+      <tr>
+        <th>Food</th>
+        <th>Quantity</th>
+        <th>Value</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @food_recipe.each do |recipe_food| %>
+        <tr>
+          <td><%= recipe_food.food.name %></td>
+          <td><%= recipe_food.quantity %></td>
+          <td><%= recipe_food.food.price * recipe_food.quantity %></td>
+          <% if current_user.id == @recipe.user_id %>
+            <td><%= button_to "Delete", recipe_recipe_food_path(@recipe, recipe_food), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% else %>
+            <td>No actions</td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>

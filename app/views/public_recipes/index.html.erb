@@ -1,19 +1,22 @@
-<div class=container>
-  <h1 class="titles">Public Recipes</h1>
-  <% if @recipes.empty? %>
-    <p>No public recipes have been added yet</p>
-  <% end %>
- <% @recipes.each do |recipe| %>
-      <div class="recipes flex">
-        <div>
-          <h3><%= link_to "#{recipe.name}", recipe_path(recipe.id), class: "links" %></h3>
-          <h4>By: <%= recipe.user.name %></h4> 
-        </div>
-        <div>
-          <h4> Total food items: <%= recipe.recipe_foods.count %></h4>
-          <p><%= "Total price: $#{recipe.total_price}"%></p>
-        </div>
-      </div>
+<head>
+  <title>Recipe App</title>
+  <%= stylesheet_link_tag 'public_recipes' %>
+</head>
+
+<section class="section">
+<% @recipes.each do |recipe| %>
+
+    <div class="single_public_recipe">
+            <div class="section1">
+            <h2 class="recipe-name"><%= link_to recipe.name, recipe_path(recipe.id)%></h2>
+            <p>By: <%= recipe.user.name%></p>
+            </div>
+            <div class="section2">
+            <p>Total food items: <%=recipe.recipe_foods.count%></p>
+            <p>Total price: $<%= recipe.recipe_foods.sum { |recipefood| recipefood.food.price * recipefood.quantity } %></p>
+            </div>
+            
+    </div>
     <% end %>
 
-</div>
+</section>

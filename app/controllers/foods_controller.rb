@@ -1,32 +1,35 @@
 class FoodsController < ApplicationController
-  load_and_authorize_resource
-
   def index
-    @foods = Food.all.includes([:user])
+    @foods = current_user.foods.all
   end
 
   def new
     @food = Food.new
   end
 
-  def show; end
-
   def create
-    @food = Food.new(food_params)
-    @food.user_id = current_user.id
+    @food = Food.create(food_params.merge(user_id: current_user.id))
 
-    if @food.save
-      redirect_to foods_path
-      flash[:notice] = 'Food was Successfully Created'
-    else
-      render :new
-      flash[:notice] = 'Food has not been created'
+    respond_to do |format|
+      format.html do
+        if @food.save
+          redirect_to foods_path
+        else
+          redirect_to new_food_path
+        end
+      end
     end
   end
 
   def destroy
     @food = Food.find(params[:id])
-    @food.destroy
+
+    if @food.destroy
+      flash[:notice] = 'Food deleted successfully.'
+    else
+      flash[:alert] = 'Failed to delete food.'
+    end
+
     redirect_to foods_path
   end
 

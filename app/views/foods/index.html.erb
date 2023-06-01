@@ -1,28 +1,35 @@
-<% if user_signed_in? %>
-<button class="btn"><%= link_to 'New Food', new_food_path, class: "links" %></button>
-<% end %>
-<table>
-    <thead>
-        <tr>
-        <th>Name</th>
-        <th>Measurement Unit</th>
-        <th>Unit Price</th>
-        <th> Action</th>
-        <th colspan="3"></th>
-        </tr>
-    </thead>
-    
-    <tbody>
+<head>
+  <title>Recipe App</title>
+  <%= stylesheet_link_tag 'foods' %>
+</head>
+
+<section class="section">
+  <button><%= link_to 'Create Food', "foods/new" %></button>
+
+  <%if @foods.empty?%>
+    <p>No Food Added</p>
+  <% else %>
+    <div class="table">
+      <table class="table">
+        <thead>
+          <td> Food</td>
+          <td> Measurement Unit</td>
+          <td> Unit price</td>
+          <td> Action</td>
+        </thead>
         <% @foods.each do |food| %>
-        <tr>
-            <td><%= food.name %></td>
-            <td><%= food.measurement_unit %></td>
-            <td>$<%= food.price %></td>
-            <td>
-              <% if can? :manage, food %>
-              <%= button_to 'Destroy', food_path(food), method: :delete, data: { turbo: false } %>
-              <% end %>
-            </td>
-        </tr>
+          <tr>
+            <td> <%= food.name %> </td>
+            <td> <%= food.measurement_unit %> </td>
+            <td> $<%= food.price %></td>
+            <% if current_user.id == food.user_id %>
+              <td> <%= button_to 'Delete', food, method: :delete %> </td>
+            <% else %>
+              <td> No Action </td>
+            <% end %>
+          </tr>
         <% end %>
-    </tbody>
+      </table>
+    </div>
+  <% end %>
+</section>
