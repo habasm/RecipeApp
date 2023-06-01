@@ -74,6 +74,7 @@ GEM
     bootsnap (1.16.0)
       msgpack (~> 1.2)
     builder (3.2.4)
+    cancancan (3.5.0)
     capybara (3.39.1)
       addressable
       matrix
@@ -97,6 +98,11 @@ GEM
       warden (~> 1.2.3)
     diff-lcs (1.5.0)
     erubi (1.12.0)
+    factory_bot (6.2.1)
+      activesupport (>= 5.0.0)
+    factory_bot_rails (6.2.0)
+      factory_bot (~> 6.2.0)
+      railties (>= 5.0.0)
     globalid (1.1.0)
       activesupport (>= 5.0)
     i18n (1.13.0)
@@ -196,7 +202,7 @@ GEM
     rspec-mocks (3.12.5)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.12.0)
-    rspec-rails (6.0.2)
+    rspec-rails (6.0.3)
       actionpack (>= 6.1)
       activesupport (>= 6.1)
       railties (>= 6.1)
@@ -215,7 +221,7 @@ GEM
       rubocop-ast (>= 1.28.0, < 2.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 2.4.0, < 3.0)
-    rubocop-ast (1.28.1)
+    rubocop-ast (1.29.0)
       parser (>= 3.2.1.0)
     ruby-progressbar (1.13.0)
     rubyzip (2.3.2)
@@ -268,14 +274,16 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
+  cancancan
   capybara
   debug
   devise
+  factory_bot_rails
   importmap-rails
   jbuilder
   pg (~> 1.1)
   puma (~> 5.0)
-  rails (~> 7.0.4, >= 7.0.4.2)
+  rails (~> 7.0.4, >= 7.0.4.3)
   rspec-rails
   rubocop (>= 1.0, < 2.0)
   selenium-webdriver
@@ -290,4 +298,4 @@ RUBY VERSION
    ruby 3.1.3p185
 
 BUNDLED WITH
-   2.4.13
+   2.4.7

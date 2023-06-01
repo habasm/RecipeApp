@@ -6,7 +6,7 @@
 #   gem install pg -- --with-pg-config=/usr/local/bin/pg_config
 # On macOS with MacPorts:
 #   gem install pg -- --with-pg-config=/opt/local/lib/postgresql84/bin/pg_config
-# On Windows:
+# On Windows: the filre d
 #   gem install pg
 #       Choose the win32 build.
 #       Install PostgreSQL and put its /bin directory on your path.
@@ -33,8 +33,10 @@ development:
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user running Rails.
+  # username: postgres
 
   # The password associated with the postgres role (username).
+  #password:
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -87,6 +89,6 @@ test:
 #
 production:
   <<: *default
-  database: RecipeApp_production
-  username: orbit
-  password: <%= ENV["RECIPEAPP_DATABASE_PASSWORD"] %>
+  database: Recipe_App_production
+  username: Recipe_App
+  password: <%= ENV["RECIPE_APP_DATABASE_PASSWORD"] %>
