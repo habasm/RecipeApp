@@ -10,7 +10,7 @@
       <th>Name</th>
       <th>Measurement Unit</th>
       <th>Unit Price</th>
-      <th>Actions</th>
+      <th colspan="3">Actions</th>
     </tr>
   </thead>
   <tbody>
@@ -25,6 +25,7 @@
                        turbo_confirm: "Are you sure?"}, 
                        class: "comment-like btn btn-warning" %>
         </td>
+        <td><%= link_to "Edit Food", edit_food_path(food), class: "comment-like btn btn-warning" %></td>
       </tr>
    <% end %>
 </tbody>

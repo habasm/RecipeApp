@@ -6,12 +6,14 @@ class FoodsController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:user_id])
-    @food = @user.foods.find(params[:id])
+    
   end
 
   def new
     @food = Food.new
+  end
+
+  def edit
   end
  
   def create
@@ -23,6 +25,18 @@ class FoodsController < ApplicationController
         format.json { render :show, status: :created, location: @food }
       else
         format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @food.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def update
+    respond_to do |format|
+      if @food.update(**food_params, user_id: current_user.id)
+        format.html { redirect_to foods_url(@food), notice: 'Food was successfully updated.' }
+        format.json { render :show, status: :ok, location: @food }
+      else
+        format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @food.errors, status: :unprocessable_entity }
       end
     end
@@ -43,7 +57,7 @@ class FoodsController < ApplicationController
   end
 
   def food_params
-    params.require(:food).permit(:Name, :Measurement_id, Price: 0, Quantity: 0)
+    params.require(:food).permit(:Name, :Measurement_id, :Price, :Quantity)
   end
 end
 

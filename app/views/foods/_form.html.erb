@@ -11,25 +11,25 @@
 
   <div>
     <%= form.label :name, class: 'text-white'  %>
-    <%= form.text_field :name %>
+    <%= form.text_field :Name %>
   </div>
 
   <div>
     <%= form.label :measurement_unit, class: 'text-white'  %>
-    <%= form.text_field :measurement_unit %>
+    <%= form.text_field :Measurement_id %>
   </div>
 
   <div>
     <%= form.label :price, class: 'text-white'  %>
-    <%= form.text_field :price %>
+    <%= form.text_field :Price %>
   </div>
 
   <div>
     <%= form.label :quantity, class: 'text-white' %>
-    <%= form.number_field :quantity %>
+    <%= form.number_field :Quantity %>
   </div>
 
   <div class="my-3">
-    <%= form.submit %>
+    <%= form.submit :Submit, class: 'btn btn-warning' %>
   </div>
 <% end %>
