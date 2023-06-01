@@ -3,57 +3,18 @@
   <head>
     <title>RecipeApp</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <script src="https://kit.fontawesome.com/a738fb17fd.js" crossorigin="anonymous"></script>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
-    <div class="container main-container mt-4 d-flex flex-column">
-<nav class="navbar navbar-expand-lg bg-warning">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Recipe App</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <% if user_signed_in? %>
-                        <li class="nav-item ">
-                            <%= link_to current_user.email, edit_user_registration_path, class:'nav-link  mx-3 my-auto' %>
-                        </li>
-                        <li class="nav-item active">
-                            <%= link_to 'Log out', destroy_user_session_path, method: :delete, class:'nav-link mx-3 my-auto' %>
-                        </li>  
-                      <% else %> 
-                        <li class="nav-item">
-                            <%= link_to 'Sign Up', new_user_registration_path, class:'nav-link  mx-3 my-auto' %>
-                        </li>  
-                     
-                     <li class="nav-item">
-                        <%= link_to 'Sign In', new_user_session_path, class:'nav-link mx-3 my-auto' %>
-                    </li>   
-                  <% end %>   
-      </ul>
-     
-    </div>
-  </div>
-</nav>
-    
-   <main  class="container content">
-    <div class="container my-2">
-        <% if notice %> <div class="alert alert-info"><%= notice %></div> <% end %>
-       <% if alert %> <div class="alert alert-warning"><%= alert %></div> <% end %>
-
-    </div>
-      <%= yield %>
-  </main>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
+   <p class="notice"><%= notice %></p>
+   <p class="alert"><%= alert %></p>
+   <%= render partial: 'layouts/nav' %>
+    <%= yield %>
   </body>
 </html>
