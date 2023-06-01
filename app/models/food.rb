@@ -7,6 +7,7 @@ class Food < ApplicationRecord
   belongs_to :user, class_name: 'User'
 
   private
+
   def set_default_value
     self.Price ||= 0
     self.Quantity ||= 0

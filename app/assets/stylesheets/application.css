@@ -49,17 +49,19 @@ h2 {
   color: var(--accent);
   text-decoration: underline;
 }
+
 table {
-    width: 80%;
-    padding: 2rem 2.5rem;
-    margin: 2rem;
+  width: 80%;
+  padding: 2rem 2.5rem;
+  margin: 2rem;
 }
 
-tr, th {
-    padding: 1rem 0;
-    text-align: center;
-
+tr,
+th {
+  padding: 1rem 0;
+  text-align: center;
 }
+
 td {
-    padding: 1rem;
+  padding: 1rem;
 }
