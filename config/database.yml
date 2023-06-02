@@ -6,7 +6,7 @@
 #   gem install pg -- --with-pg-config=/usr/local/bin/pg_config
 # On macOS with MacPorts:
 #   gem install pg -- --with-pg-config=/opt/local/lib/postgresql84/bin/pg_config
-# On Windows:
+# On Windows: the filre d
 #   gem install pg
 #       Choose the win32 build.
 #       Install PostgreSQL and put its /bin directory on your path.
@@ -23,13 +23,15 @@ default: &default
 
 development:
   <<: *default
-  database: RecipeApp_development
+  database: Recipe_App_development
+  username: postgres
+  password: "@has"
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user running Rails.
-  #username: RecipeApp
+  # username: postgres
 
   # The password associated with the postgres role (username).
   #password:
@@ -57,7 +59,9 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: RecipeApp_test
+  database: Recipe_App_test
+  username: postgres
+  password: "@has"
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -81,6 +85,6 @@ test:
 #
 production:
   <<: *default
-  database: RecipeApp_production
-  username: RecipeApp
-  password: <%= ENV["RECIPEAPP_DATABASE_PASSWORD"] %>
+  database: Recipe_App_production
+  username: Recipe_App
+  password: <%= ENV["RECIPE_APP_DATABASE_PASSWORD"] %>
