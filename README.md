@@ -119,6 +119,16 @@ You can deploy this project using:
 - GitHub: [@habasm](https://github.com/habasm)
 - Twitter: [@habasm](https://twitter.com/habasm)
 - LinkedIn: [habasm](https://www.linkedin.com/in/habasm/)
+👤 **JUHAR SEID**
+
+- GitHub: [@juaryimami](https://github.com/juaryimami)
+- Twitter: [@jupack](https://twitter.com/juhar75777)
+- LinkedIn: [juharyimer](https://www.linkedin.com/in/juhar-yimer/)
+👤 **RIYAZ AHMED**
+
+- GitHub: [@habasm](https://github.com/riasz)
+- Twitter: [@habasm](https://twitter.com/habasm)
+- LinkedIn: [habasm](https://www.linkedin.com/in/habasm/)
 
 ## 🔭 Future Features <a name="future-features"></a>
 
