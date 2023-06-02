@@ -124,6 +124,7 @@ You can deploy this project using:
 - GitHub: [@juaryimami](https://github.com/juaryimami)
 - Twitter: [@jupack](https://twitter.com/juhar75777)
 - LinkedIn: [juharyimer](https://www.linkedin.com/in/juhar-yimer/)
+
 👤 **RIYAZ AHMED**
 
 - GitHub: [@r-ahmed2022](https://github.com/r-ahmed2022/)
