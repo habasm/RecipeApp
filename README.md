@@ -126,9 +126,8 @@ You can deploy this project using:
 - LinkedIn: [juharyimer](https://www.linkedin.com/in/juhar-yimer/)
 👤 **RIYAZ AHMED**
 
-- GitHub: [@habasm](https://github.com/riasz)
-- Twitter: [@habasm](https://twitter.com/habasm)
-- LinkedIn: [habasm](https://www.linkedin.com/in/habasm/)
+- GitHub: [@r-ahmed2022](https://github.com/r-ahmed2022/)
+- LinkedIn: [Riyaz Ahmed](https://www.linkedin.com/in/riyazahmedmicroverse/)
 
 ## 🔭 Future Features <a name="future-features"></a>
 
